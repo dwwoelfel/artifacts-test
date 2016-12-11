@@ -9,5 +9,5 @@ deployment:
   production:
     branch: master
     commands:
-      - echo "https://circleci.com/api/v1/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/1/\$CIRCLE_ARTIFACTS/index.out"
-      - curl "https://circleci.com/api/v1/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/1/\$CIRCLE_ARTIFACTS/index.out"
+      - echo "https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/1/\$CIRCLE_ARTIFACTS/index.out"
+      - curl "https://circleci.com/api/v1/project/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/1/\$CIRCLE_ARTIFACTS/index.out"
