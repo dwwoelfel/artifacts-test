@@ -1,0 +1,13 @@
+test:
+  override:
+    - echo "$CIRCLE_NODE_INDEX" > $CIRCLE_ARTIFACTS/index.out:
+        parallel: true
+    - cat $CIRCLE_ARTIFACTS/index.out:
+        parallel: true
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - echo "https://circleci.com/api/v1/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/1/\$CIRCLE_ARTIFACTS/index.out"
+      - curl "https://circleci.com/api/v1/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/$CIRCLE_BUILD_NUM/artifacts/1/\$CIRCLE_ARTIFACTS/index.out"
